@@ -20,4 +20,5 @@ atulya-erp = "atulya_accounting_erp.cli:main"
 version = {attr = "atulya_accounting_erp.__version__"}
 
 [tool.setuptools.packages.find]
-where = ["src"]
+include = ["*"]
+
