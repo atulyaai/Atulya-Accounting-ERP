@@ -8,7 +8,7 @@
 ![Focus](https://img.shields.io/badge/focus-accounting%20%7C%20inventory%20%7C%20operations-14b8a6)
 ![Platforms](https://img.shields.io/badge/planned-desktop%20%7C%20web%20%7C%20server-2563eb)
 
-Atulya ERP is planned as the accounting and operations foundation of [Atulya One](https://github.com/atulyaai/Atulya-One): customers, vendors, items, sales, purchases, inventory, ledgers and business reports in a system the business controls.
+Atulya ERP is planned as the accounting and operations foundation of [Atulya One](https://github.com/atulyaai/Atulya-Automation-Hub): customers, vendors, items, sales, purchases, inventory, ledgers and business reports in a system the business controls.
 
 > 🚧 This repository currently describes the architecture and delivery roadmap. It is not yet an installable ERP.
 
@@ -20,8 +20,8 @@ Atulya ERP is planned as the accounting and operations foundation of [Atulya One
 | Sales | Quotations, orders, tax invoices, credit notes and outstanding balances |
 | Purchases | RFQ, vendor quotes, PO, GRN and bill tracking |
 | Inventory | Items, batches, warehouses, movement and reorder alerts |
-| Banking | Statement import and reconciliation through [Atulya DataClean](https://github.com/atulyaai/Atulya-DataClean) |
-| Tax | GST-ready transaction data routed to [Atulya GST](https://github.com/atulyaai/Atulya-GST) |
+| Banking | Statement import and reconciliation through [Atulya DataClean](https://github.com/atulyaai/Atulya-Data-Scruber) |
+| Tax | GST-ready transaction data routed to [Atulya GST](https://github.com/atulyaai/Atulya-GST-Suite) |
 | Reports | Excel/PDF exports, dashboards and month-end packs |
 
 ## ⚡ Planned One-Click Setup
@@ -63,7 +63,7 @@ flowchart LR
 
 ## 🔗 Ecosystem
 
-[Atulya Invoice](https://github.com/atulyaai/Atulya-Invoice) · [Atulya GST](https://github.com/atulyaai/Atulya-GST) · [Atulya HR](https://github.com/atulyaai/Atulya-HR) · [Atulya DataClean](https://github.com/atulyaai/Atulya-DataClean)
+[Atulya Invoice](https://github.com/atulyaai/Atulya-Invoice) · [Atulya GST](https://github.com/atulyaai/Atulya-GST-Suite) · [Atulya HR](https://github.com/atulyaai/Atulya-HR-Suite) · [Atulya DataClean](https://github.com/atulyaai/Atulya-Data-Scruber)
 
 ## 📜 License
 
