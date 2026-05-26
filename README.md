@@ -8,7 +8,7 @@
 ![Focus](https://img.shields.io/badge/focus-accounting%20%7C%20inventory%20%7C%20operations-14b8a6)
 ![Platforms](https://img.shields.io/badge/planned-desktop%20%7C%20web%20%7C%20server-2563eb)
 
-Atulya ERP is planned as the accounting and operations foundation of [Atulya One](https://github.com/atulyaai/Atulya-Automation-Hub): customers, vendors, items, sales, purchases, inventory, ledgers and business reports in a system the business controls.
+Atulya ERP is planned as a standalone accounting and operations product: customers, vendors, items, sales, purchases, inventory, ledgers and business reports in a system the business controls.
 
 > 🚧 This repository currently describes the architecture and delivery roadmap. It is not yet an installable ERP.
 
@@ -20,8 +20,8 @@ Atulya ERP is planned as the accounting and operations foundation of [Atulya One
 | Sales | Quotations, orders, tax invoices, credit notes and outstanding balances |
 | Purchases | RFQ, vendor quotes, PO, GRN and bill tracking |
 | Inventory | Items, batches, warehouses, movement and reorder alerts |
-| Banking | Statement import and reconciliation through [Atulya DataClean](https://github.com/atulyaai/Atulya-Data-Scruber) |
-| Tax | GST-ready transaction data routed to [Atulya GST](https://github.com/atulyaai/Atulya-GST-Suite) |
+| Banking | Statement import, payment matching and reconciliation reports |
+| Tax | GST-ready transaction records and exportable tax working data |
 | Reports | Excel/PDF exports, dashboards and month-end packs |
 
 ## ⚡ Planned One-Click Setup
@@ -51,8 +51,8 @@ flowchart LR
 | 1 | Company, parties, items, invoices and PDF/Excel outputs |
 | 2 | Purchase cycle, inventory movement and payment tracking |
 | 3 | Double-entry vouchers, ledgers, trial balance and reports |
-| 4 | GST data handoff, reconciliation and import/export bridges |
-| 5 | Multi-user controls, approvals, audit logs and Atulya One integration |
+| 4 | Tax working exports, reconciliation tools and import/export bridges |
+| 5 | Multi-user controls, approvals, audit logs and release packaging |
 
 ## 🔐 Design Rules
 
@@ -61,9 +61,9 @@ flowchart LR
 - GST or external-system submission happens only through validated, authorized workflows.
 - Import/export compatibility will be documented without claiming endorsement by any third-party ERP provider.
 
-## 🔗 Ecosystem
+## 🔗 Independent Atulya Projects
 
-[Atulya Invoice](https://github.com/atulyaai/Atulya-Invoice) · [Atulya GST](https://github.com/atulyaai/Atulya-GST-Suite) · [Atulya HR](https://github.com/atulyaai/Atulya-HR-Suite) · [Atulya DataClean](https://github.com/atulyaai/Atulya-Data-Scruber)
+This is a standalone product. Discover other independent Atulya repositories: [Automation Hub](https://github.com/atulyaai/Atulya-Automation-Hub) · [GST](https://github.com/atulyaai/Atulya-GST-Suite) · [SAP](https://github.com/atulyaai/Atulya-SAP-Automations) · [Office](https://github.com/atulyaai/Atulya-Office) · [HR](https://github.com/atulyaai/Atulya-HR-Suite) · [DataClean](https://github.com/atulyaai/Atulya-Data-Scruber) · [Invoice](https://github.com/atulyaai/Atulya-Invoice) · [Convert](https://github.com/atulyaai/Atulya-All-File-Converter) · [Host](https://github.com/atulyaai/Atulya-Launch)
 
 ## 📜 License
 
