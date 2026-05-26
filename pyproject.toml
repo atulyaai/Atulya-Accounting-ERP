@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "atulya-accounting-erp"
+dynamic = ["version"]
+description = "Cross-platform Python CLI tool for accounting, inventory, billing, invoicing, and reporting for Indian businesses"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Atulya Tantra"}
+]
+
+[project.scripts]
+atulya-erp = "atulya_accounting_erp.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "atulya_accounting_erp.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
