@@ -839,7 +839,6 @@ def generate_invoice_pdf(bill_id):
         pdf_text(pdf, "Address", company_addr, 9)
     if company_gst:
         pdf_text(pdf, "GSTIN", company_gst, 9)
-    pdf_text(pdf, "GSTIN", company_gst, 9) if company_gst else None
     pdf.ln(4)
 
     pdf_heading(pdf, "TAX INVOICE", 14)
@@ -853,9 +852,8 @@ def generate_invoice_pdf(bill_id):
         pdf_text(pdf, "GSTIN", bill["customer_gst"], 10)
     pdf.ln(4)
 
-    col_widths = [10, 60, 15, 25, 25, 25, 30]
-    headers = ["#", "Item", "HSN", "Qty", "Rate", "Amount"]
-    pdf_table_header(pdf, ["#", "Item", "HSN", "Qty", "Rate", "Amount", "Total"], col_widths)
+    col_widths = [10, 60, 15, 25, 25, 30]
+    pdf_table_header(pdf, ["#", "Item", "HSN", "Qty", "Rate", "Amount"], col_widths)
 
     for i, item in enumerate(items, 1):
         pdf_table_row(pdf, [
@@ -1189,9 +1187,14 @@ def add_grn(grn_date, po_number, vendor_name, items=None, notes=""):
             (entry_number, date_str, f"Purchase - {grn_number} - {vendor_name}"),
         )
         je_id = conn.lastrowid
+        total_amount = sum(item.get("quantity", 0) * item.get("rate", 0) for item in items)
         conn.execute(
             "INSERT INTO journal_entry_lines (journal_entry_id, account_id, debit_amount, credit_amount) VALUES (?, ?, ?, ?)",
-            (je_id, purchase_account["id"], 0, 0),
+            (je_id, purchase_account["id"], total_amount, 0),
+        )
+        conn.execute(
+            "INSERT INTO journal_entry_lines (journal_entry_id, account_id, debit_amount, credit_amount) VALUES (?, ?, ?, ?)",
+            (je_id, payable_account["id"], 0, total_amount),
         )
 
     conn.commit()

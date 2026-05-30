@@ -291,12 +291,10 @@ def movement(code, start_date, end_date):
     """Show stock movement report."""
     item_id = None
     if code:
-        acct = find_account(code)
-        if not acct:
-            for item in get_inventory_items():
-                if item["code"] == code:
-                    item_id = item["id"]
-                    break
+        for item in get_inventory_items():
+            if item["code"] == code:
+                item_id = item["id"]
+                break
         if not item_id:
             click.echo(f"Item not found: {code}", err=True)
             sys.exit(1)
